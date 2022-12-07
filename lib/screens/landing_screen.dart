@@ -1,12 +1,10 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
+
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import 'package:schedule_week/screens/schedule_screen2.dart';
 import 'package:schedule_week/constants/constants.dart';
 
-import 'schedule_screen.dart';
 
 class LandingScreen extends StatelessWidget {
   const LandingScreen({super.key});
@@ -21,7 +19,7 @@ class LandingScreen extends StatelessWidget {
             Container(
               height: size.height * 0.6,
               width: size.width,
-              decoration: BoxDecoration(boxShadow: [
+              decoration: const BoxDecoration(boxShadow: [
                 BoxShadow(
                     color: Color.fromARGB(255, 196, 196, 196),
                     blurRadius: 3.0,
@@ -30,7 +28,7 @@ class LandingScreen extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Container(
-                  padding: EdgeInsets.all(10),
+                  padding: const EdgeInsets.all(10),
                   height: size.height * 0.6,
                   width: size.width,
                   decoration: BoxDecoration(
@@ -73,7 +71,7 @@ class LandingScreen extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => ScheduleScreen2(),
+                    builder: (context) => const ScheduleScreen2(),
                   ),
                 );
               },

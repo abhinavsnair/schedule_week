@@ -1,7 +1,5 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 import 'package:flutter/material.dart';
 import 'package:schedule_week/constants/constants.dart';
-import 'package:schedule_week/model/schedule.dart';
 import 'utils/time_container.dart';
 
 class ScheduleScreen2 extends StatefulWidget {
@@ -63,14 +61,17 @@ class _ScheduleScreen2State extends State<ScheduleScreen2> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
+              // title
+              const Text(
                 'Set your weekly hours',
                 style: TextStyle(
                   fontWeight: FontWeight.w500,
                   fontSize: 18,
                 ),
               ),
-            sboxh15,
+              sboxh15,
+
+              // sunday
               Row(
                 children: [
                   Row(
@@ -86,21 +87,21 @@ class _ScheduleScreen2State extends State<ScheduleScreen2> {
                               ? Colors.green
                               : Colors.grey,
                         ),
-                        child: Center(
+                        child: const Center(
                           child: Icon(
                             Icons.done,
                             color: Colors.white,
                           ),
                         ),
                       ),
-                       sboxw15,
+                      sboxw15,
                       InkWell(
                         onTap: (() {
                           setState(() {
                             isSunday = !isSunday;
                           });
                         }),
-                        child: Text('Sun'),
+                        child: const Text('Sun'),
                       )
                     ],
                   ),
@@ -151,8 +152,8 @@ class _ScheduleScreen2State extends State<ScheduleScreen2> {
                             ),
                           ],
                         )
-                      : Padding(
-                          padding: const EdgeInsets.all(8.0),
+                      : const Padding(
+                          padding: EdgeInsets.all(8.0),
                           child: Text(
                             'unavailable',
                             style: TextStyle(color: Colors.grey),
@@ -161,9 +162,11 @@ class _ScheduleScreen2State extends State<ScheduleScreen2> {
                 ],
               ),
               sboxh10,
-              Divider(
+              const Divider(
                 thickness: 0.8,
               ),
+
+              // monday
               Row(
                 children: [
                   Row(
@@ -179,21 +182,21 @@ class _ScheduleScreen2State extends State<ScheduleScreen2> {
                               ? Colors.green
                               : Colors.grey,
                         ),
-                        child: Center(
+                        child: const Center(
                           child: Icon(
                             Icons.done,
                             color: Colors.white,
                           ),
                         ),
                       ),
-                     sboxw15,
+                      sboxw15,
                       InkWell(
                         onTap: (() {
                           setState(() {
                             isMonday = !isMonday;
                           });
                         }),
-                        child: Text('Mon'),
+                        child: const Text('Mon'),
                       )
                     ],
                   ),
@@ -244,8 +247,8 @@ class _ScheduleScreen2State extends State<ScheduleScreen2> {
                             ),
                           ],
                         )
-                      : Padding(
-                          padding: const EdgeInsets.all(8.0),
+                      : const Padding(
+                          padding: EdgeInsets.all(8.0),
                           child: Text(
                             'unavailable',
                             style: TextStyle(color: Colors.grey),
@@ -254,9 +257,10 @@ class _ScheduleScreen2State extends State<ScheduleScreen2> {
                 ],
               ),
               sboxh10,
-              Divider(
+              const Divider(
                 thickness: 0.8,
               ),
+              // tuesday
               Row(
                 children: [
                   Row(
@@ -272,21 +276,21 @@ class _ScheduleScreen2State extends State<ScheduleScreen2> {
                               ? Colors.green
                               : Colors.grey,
                         ),
-                        child: Center(
+                        child: const Center(
                           child: Icon(
                             Icons.done,
                             color: Colors.white,
                           ),
                         ),
                       ),
-                     sboxw15,
+                      sboxw15,
                       InkWell(
                         onTap: (() {
                           setState(() {
                             isTuesday = !isTuesday;
                           });
                         }),
-                        child: Text('Tues'),
+                        child: const Text('Tues'),
                       )
                     ],
                   ),
@@ -337,18 +341,20 @@ class _ScheduleScreen2State extends State<ScheduleScreen2> {
                             ),
                           ],
                         )
-                      : Padding(
-                          padding: const EdgeInsets.all(8.0),
+                      : const Padding(
+                          padding: EdgeInsets.all(8.0),
                           child: Text(
                             "unavailable",
                             style: TextStyle(color: Colors.grey),
                           )),
                 ],
               ),
-             sboxh10,
-              Divider(
+              sboxh10,
+              const Divider(
                 thickness: 0.8,
               ),
+
+              // wednesday
               Row(
                 children: [
                   Row(
@@ -364,21 +370,21 @@ class _ScheduleScreen2State extends State<ScheduleScreen2> {
                               ? Colors.green
                               : Colors.grey,
                         ),
-                        child: Center(
+                        child: const Center(
                           child: Icon(
                             Icons.done,
                             color: Colors.white,
                           ),
                         ),
                       ),
-                     sboxw15,
+                      sboxw15,
                       InkWell(
                         onTap: (() {
                           setState(() {
                             isWednesday = !isWednesday;
                           });
                         }),
-                        child: Text('Wed'),
+                        child: const Text('Wed'),
                       )
                     ],
                   ),
@@ -429,8 +435,8 @@ class _ScheduleScreen2State extends State<ScheduleScreen2> {
                             ),
                           ],
                         )
-                      : Padding(
-                          padding: const EdgeInsets.all(8.0),
+                      : const Padding(
+                          padding: EdgeInsets.all(8.0),
                           child: Text(
                             'unavailable',
                             style: TextStyle(color: Colors.grey),
@@ -438,10 +444,11 @@ class _ScheduleScreen2State extends State<ScheduleScreen2> {
                         ),
                 ],
               ),
-             sboxh10,
-              Divider(
+              sboxh10,
+              const Divider(
                 thickness: 0.8,
               ),
+              // thursday
               Row(
                 children: [
                   Row(
@@ -457,7 +464,7 @@ class _ScheduleScreen2State extends State<ScheduleScreen2> {
                               ? Colors.green
                               : Colors.grey,
                         ),
-                        child: Center(
+                        child: const Center(
                           child: Icon(
                             Icons.done,
                             color: Colors.white,
@@ -471,7 +478,7 @@ class _ScheduleScreen2State extends State<ScheduleScreen2> {
                             isThursday = !isThursday;
                           });
                         }),
-                        child: Text('Thu'),
+                        child: const Text('Thu'),
                       )
                     ],
                   ),
@@ -522,8 +529,8 @@ class _ScheduleScreen2State extends State<ScheduleScreen2> {
                             ),
                           ],
                         )
-                      : Padding(
-                          padding: const EdgeInsets.all(8.0),
+                      : const Padding(
+                          padding: EdgeInsets.all(8.0),
                           child: Text(
                             'unavailable',
                             style: TextStyle(color: Colors.grey),
@@ -532,9 +539,10 @@ class _ScheduleScreen2State extends State<ScheduleScreen2> {
                 ],
               ),
               sboxh10,
-              Divider(
+              const Divider(
                 thickness: 0.8,
               ),
+              // friday
               Row(
                 children: [
                   Row(
@@ -550,21 +558,21 @@ class _ScheduleScreen2State extends State<ScheduleScreen2> {
                               ? Colors.green
                               : Colors.grey,
                         ),
-                        child: Center(
+                        child: const Center(
                           child: Icon(
                             Icons.done,
                             color: Colors.white,
                           ),
                         ),
                       ),
-                     sboxw15,
+                      sboxw15,
                       InkWell(
                         onTap: (() {
                           setState(() {
                             isFriday = !isFriday;
                           });
                         }),
-                        child: Text('Fri'),
+                        child: const Text('Fri'),
                       )
                     ],
                   ),
@@ -615,8 +623,8 @@ class _ScheduleScreen2State extends State<ScheduleScreen2> {
                             ),
                           ],
                         )
-                      : Padding(
-                          padding: const EdgeInsets.all(8.0),
+                      : const Padding(
+                          padding: EdgeInsets.all(8.0),
                           child: Text(
                             'unavailable',
                             style: TextStyle(color: Colors.grey),
@@ -624,10 +632,11 @@ class _ScheduleScreen2State extends State<ScheduleScreen2> {
                         ),
                 ],
               ),
-             sboxh10,
-              Divider(
+              sboxh10,
+              const Divider(
                 thickness: 0.8,
               ),
+              // saturday
               Row(
                 children: [
                   Row(
@@ -643,21 +652,21 @@ class _ScheduleScreen2State extends State<ScheduleScreen2> {
                               ? Colors.green
                               : Colors.grey,
                         ),
-                        child: Center(
+                        child: const Center(
                           child: Icon(
                             Icons.done,
                             color: Colors.white,
                           ),
                         ),
                       ),
-                    sboxw15,
+                      sboxw15,
                       InkWell(
                         onTap: (() {
                           setState(() {
                             isSaturday = !isSaturday;
                           });
                         }),
-                        child: Text('Sat'),
+                        child: const Text('Sat'),
                       )
                     ],
                   ),
@@ -708,8 +717,8 @@ class _ScheduleScreen2State extends State<ScheduleScreen2> {
                             ),
                           ],
                         )
-                      : Padding(
-                          padding: const EdgeInsets.all(8.0),
+                      : const Padding(
+                          padding: EdgeInsets.all(8.0),
                           child: Text(
                             'unavailable',
                             style: TextStyle(color: Colors.grey),
@@ -717,7 +726,8 @@ class _ScheduleScreen2State extends State<ScheduleScreen2> {
                         ),
                 ],
               ),
-            sboxh10,
+              sboxh10,
+              // save button
               Padding(
                 padding: const EdgeInsets.only(left: 125, top: 15),
                 child: SizedBox(
@@ -733,7 +743,7 @@ class _ScheduleScreen2State extends State<ScheduleScreen2> {
                     onPressed: () {
                       // saveSchedule();
                     },
-                    child: Text('Save'),
+                    child: const Text('Save'),
                   ),
                 ),
               )
@@ -745,5 +755,5 @@ class _ScheduleScreen2State extends State<ScheduleScreen2> {
   }
 
   // void saveSchedule() async{
-  //   final scheduleData = WeeklySchedules(schedule: TimeContainer.);  }
+  //   final scheduleData = WeeklySchedules(schedule: TimeContainer.time);  }
 }

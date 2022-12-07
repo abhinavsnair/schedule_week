@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+
 
 import 'package:flutter/material.dart';
 import 'package:new_gradient_app_bar/new_gradient_app_bar.dart';
@@ -26,7 +26,7 @@ class ScheduleScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
+                const Text(
                   'Set your weekly hours',
                   style: TextStyle(
                     fontWeight: FontWeight.w500,
@@ -49,12 +49,20 @@ class ScheduleScreen extends StatelessWidget {
                       childrenCheckboxColor: Colors.deepPurple,
                       parent: Text(
                         days[index].toString(),
-                        style: const TextStyle(fontWeight: FontWeight.bold),
+                        style: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
-                      children: [
-                        Text('Morning'),
-                        Text('Afternoon'),
-                        Text('Evening'),
+                      children: const [
+                        Text(
+                          'Morning',
+                        ),
+                        Text(
+                          'Afternoon',
+                        ),
+                        Text(
+                          'Evening',
+                        ),
                       ],
                     );
                   },
@@ -69,11 +77,15 @@ class ScheduleScreen extends StatelessWidget {
                     style: ElevatedButton.styleFrom(
                       backgroundColor: purple,
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
+                        borderRadius: BorderRadius.circular(
+                          10,
+                        ),
                       ),
                     ),
                     onPressed: () {},
-                    child: Text('Save'),
+                    child: const Text(
+                      'Save',
+                    ),
                   ),
                 )
               ],
