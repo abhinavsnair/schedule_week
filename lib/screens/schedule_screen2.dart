@@ -1,13 +1,14 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 import 'package:flutter/material.dart';
 import 'package:schedule_week/constants/constants.dart';
+import 'package:schedule_week/model/schedule.dart';
 import 'utils/time_container.dart';
 
-class ScheduleScreen extends StatefulWidget {
-  const ScheduleScreen({super.key});
+class ScheduleScreen2 extends StatefulWidget {
+  const ScheduleScreen2({super.key});
 
   @override
-  State<ScheduleScreen> createState() => _ScheduleScreenState();
+  State<ScheduleScreen2> createState() => _ScheduleScreen2State();
 }
 
 // for sunday
@@ -52,7 +53,7 @@ bool isSaturdayMornging = false;
 bool isSaturdayAfternoon = false;
 bool isSaturdayEvening = false;
 
-class _ScheduleScreenState extends State<ScheduleScreen> {
+class _ScheduleScreen2State extends State<ScheduleScreen2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -69,9 +70,7 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                   fontSize: 18,
                 ),
               ),
-              SizedBox(
-                height: 15,
-              ),
+            sboxh15,
               Row(
                 children: [
                   Row(
@@ -94,16 +93,14 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                           ),
                         ),
                       ),
-                      SizedBox(
-                        width: 15,
-                      ),
+                       sboxw15,
                       InkWell(
                         onTap: (() {
                           setState(() {
                             isSunday = !isSunday;
                           });
                         }),
-                        child: Text('sun'),
+                        child: Text('Sun'),
                       )
                     ],
                   ),
@@ -115,6 +112,9 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                               color: isSundayMornging == true
                                   ? purple
                                   : Colors.grey,
+                              textcolor: isSundayMornging == true
+                                  ? purple
+                                  : Colors.grey,
                               onTap: () {
                                 setState(() {
                                   isSundayMornging = !isSundayMornging;
@@ -122,6 +122,9 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                               },
                             ),
                             TimeContainer(
+                              textcolor: isSundayAfternoon == true
+                                  ? purple
+                                  : Colors.grey,
                               text: "Afternoon",
                               color: isSundayAfternoon == true
                                   ? purple
@@ -133,6 +136,9 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                               },
                             ),
                             TimeContainer(
+                              textcolor: isSundayEvening == true
+                                  ? purple
+                                  : Colors.grey,
                               text: "Evening",
                               color: isSundayEvening == true
                                   ? purple
@@ -154,9 +160,7 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                         ),
                 ],
               ),
-              SizedBox(
-                height: 10,
-              ),
+              sboxh10,
               Divider(
                 thickness: 0.8,
               ),
@@ -182,9 +186,7 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                           ),
                         ),
                       ),
-                      SizedBox(
-                        width: 15,
-                      ),
+                     sboxw15,
                       InkWell(
                         onTap: (() {
                           setState(() {
@@ -199,17 +201,23 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                       ? Row(
                           children: [
                             TimeContainer(
+                              textcolor: isMondayMornging == true
+                                  ? purple
+                                  : Colors.grey,
                               text: "Morning",
                               color: isMondayMornging == true
                                   ? purple
                                   : Colors.grey,
                               onTap: () {
                                 setState(() {
-                                  isMondayMornging = !isSundayMornging;
+                                  isMondayMornging = !isMondayMornging;
                                 });
                               },
                             ),
                             TimeContainer(
+                              textcolor: isMondayAfternoon == true
+                                  ? purple
+                                  : Colors.grey,
                               text: "Afternoon",
                               color: isMondayAfternoon == true
                                   ? purple
@@ -221,6 +229,9 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                               },
                             ),
                             TimeContainer(
+                              textcolor: isMondayEvening == true
+                                  ? purple
+                                  : Colors.grey,
                               text: "Evening",
                               color: isMondayEvening == true
                                   ? purple
@@ -242,9 +253,7 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                         ),
                 ],
               ),
-              SizedBox(
-                height: 10,
-              ),
+              sboxh10,
               Divider(
                 thickness: 0.8,
               ),
@@ -270,9 +279,7 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                           ),
                         ),
                       ),
-                      SizedBox(
-                        width: 15,
-                      ),
+                     sboxw15,
                       InkWell(
                         onTap: (() {
                           setState(() {
@@ -287,6 +294,9 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                       ? Row(
                           children: [
                             TimeContainer(
+                              textcolor: isTuesdayMornging == true
+                                  ? purple
+                                  : Colors.grey,
                               text: "Morning",
                               color: isTuesdayMornging == true
                                   ? purple
@@ -298,6 +308,9 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                               },
                             ),
                             TimeContainer(
+                              textcolor: isTuesdayAfternoon == true
+                                  ? purple
+                                  : Colors.grey,
                               text: "Afternoon",
                               color: isTuesdayAfternoon == true
                                   ? purple
@@ -309,6 +322,9 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                               },
                             ),
                             TimeContainer(
+                              textcolor: isTuesdayEvening == true
+                                  ? purple
+                                  : Colors.grey,
                               text: "Evening",
                               color: isTuesdayEvening == true
                                   ? purple
@@ -329,9 +345,7 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                           )),
                 ],
               ),
-              SizedBox(
-                height: 10,
-              ),
+             sboxh10,
               Divider(
                 thickness: 0.8,
               ),
@@ -357,9 +371,7 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                           ),
                         ),
                       ),
-                      SizedBox(
-                        width: 15,
-                      ),
+                     sboxw15,
                       InkWell(
                         onTap: (() {
                           setState(() {
@@ -374,6 +386,9 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                       ? Row(
                           children: [
                             TimeContainer(
+                              textcolor: isWednesdayMornging == true
+                                  ? purple
+                                  : Colors.grey,
                               text: "Morning",
                               color: isWednesdayMornging == true
                                   ? purple
@@ -385,6 +400,9 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                               },
                             ),
                             TimeContainer(
+                              textcolor: isWednesdayAfternoon == true
+                                  ? purple
+                                  : Colors.grey,
                               text: "Afternoon",
                               color: isWednesdayAfternoon == true
                                   ? purple
@@ -396,6 +414,9 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                               },
                             ),
                             TimeContainer(
+                              textcolor: isWednesdayEvening == true
+                                  ? purple
+                                  : Colors.grey,
                               text: "Evening",
                               color: isWednesdayEvening == true
                                   ? purple
@@ -417,9 +438,7 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                         ),
                 ],
               ),
-              SizedBox(
-                height: 10,
-              ),
+             sboxh10,
               Divider(
                 thickness: 0.8,
               ),
@@ -445,9 +464,7 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                           ),
                         ),
                       ),
-                      SizedBox(
-                        width: 15,
-                      ),
+                      sboxw15,
                       InkWell(
                         onTap: (() {
                           setState(() {
@@ -462,6 +479,9 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                       ? Row(
                           children: [
                             TimeContainer(
+                              textcolor: isThursdayMornging == true
+                                  ? purple
+                                  : Colors.grey,
                               text: "Morning",
                               color: isThursdayMornging == true
                                   ? purple
@@ -473,6 +493,9 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                               },
                             ),
                             TimeContainer(
+                              textcolor: isThursdayAfternoon == true
+                                  ? purple
+                                  : Colors.grey,
                               text: "Afternoon",
                               color: isThursdayAfternoon == true
                                   ? purple
@@ -484,6 +507,9 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                               },
                             ),
                             TimeContainer(
+                              textcolor: isThursdayEvening == true
+                                  ? purple
+                                  : Colors.grey,
                               text: "Evening",
                               color: isThursdayEvening == true
                                   ? purple
@@ -505,9 +531,7 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                         ),
                 ],
               ),
-              SizedBox(
-                height: 10,
-              ),
+              sboxh10,
               Divider(
                 thickness: 0.8,
               ),
@@ -533,9 +557,7 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                           ),
                         ),
                       ),
-                      SizedBox(
-                        width: 15,
-                      ),
+                     sboxw15,
                       InkWell(
                         onTap: (() {
                           setState(() {
@@ -550,6 +572,9 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                       ? Row(
                           children: [
                             TimeContainer(
+                              textcolor: isFridayMornging == true
+                                  ? purple
+                                  : Colors.grey,
                               text: "Morning",
                               color: isFridayMornging == true
                                   ? purple
@@ -561,6 +586,9 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                               },
                             ),
                             TimeContainer(
+                              textcolor: isFridayAfternoon == true
+                                  ? purple
+                                  : Colors.grey,
                               text: "Afternoon",
                               color: isFridayAfternoon == true
                                   ? purple
@@ -572,6 +600,9 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                               },
                             ),
                             TimeContainer(
+                              textcolor: isFridayEvening == true
+                                  ? purple
+                                  : Colors.grey,
                               text: "Evening",
                               color: isFridayEvening == true
                                   ? purple
@@ -593,9 +624,7 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                         ),
                 ],
               ),
-              SizedBox(
-                height: 10,
-              ),
+             sboxh10,
               Divider(
                 thickness: 0.8,
               ),
@@ -621,9 +650,7 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                           ),
                         ),
                       ),
-                      SizedBox(
-                        width: 15,
-                      ),
+                    sboxw15,
                       InkWell(
                         onTap: (() {
                           setState(() {
@@ -638,6 +665,9 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                       ? Row(
                           children: [
                             TimeContainer(
+                              textcolor: isSaturdayMornging == true
+                                  ? purple
+                                  : Colors.grey,
                               text: "Morning",
                               color: isSaturdayMornging == true
                                   ? purple
@@ -649,6 +679,9 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                               },
                             ),
                             TimeContainer(
+                              textcolor: isSaturdayAfternoon == true
+                                  ? purple
+                                  : Colors.grey,
                               text: "Afternoon",
                               color: isSaturdayAfternoon == true
                                   ? purple
@@ -660,6 +693,9 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                               },
                             ),
                             TimeContainer(
+                              textcolor: isSaturdayEvening == true
+                                  ? purple
+                                  : Colors.grey,
                               text: "Evening",
                               color: isSaturdayEvening == true
                                   ? purple
@@ -681,9 +717,7 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                         ),
                 ],
               ),
-              SizedBox(
-                height: 20,
-              ),
+            sboxh10,
               Padding(
                 padding: const EdgeInsets.only(left: 125, top: 15),
                 child: SizedBox(
@@ -696,7 +730,9 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                         borderRadius: BorderRadius.circular(10),
                       ),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      // saveSchedule();
+                    },
                     child: Text('Save'),
                   ),
                 ),
@@ -707,4 +743,7 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
       ),
     );
   }
+
+  // void saveSchedule() async{
+  //   final scheduleData = WeeklySchedules(schedule: TimeContainer.);  }
 }

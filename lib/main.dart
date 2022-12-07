@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:schedule_week/screens/landing_screen.dart';
 import 'package:schedule_week/screens/schedule_screen.dart';
-import 'package:schedule_week/screens/schedule_Screen.dart';
+import 'package:schedule_week/screens/schedule_screen2.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       initialRoute: 'landing',
       routes: {
         'landing': (context) => const LandingScreen(),
-        'scheduler': (context) => const ScheduleScreen(),
+        'scheduler': (context) => const ScheduleScreen2(),
       },
     );
   }

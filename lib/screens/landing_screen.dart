@@ -2,9 +2,11 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:schedule_week/screens/schedule_screen.dart';
-import 'package:schedule_week/screens/schedule_Screen.dart';
+
+import 'package:schedule_week/screens/schedule_screen2.dart';
 import 'package:schedule_week/constants/constants.dart';
+
+import 'schedule_screen.dart';
 
 class LandingScreen extends StatelessWidget {
   const LandingScreen({super.key});
@@ -35,26 +37,30 @@ class LandingScreen extends StatelessWidget {
                     color: white,
                     borderRadius: BorderRadius.circular(10)
                   ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        greeting,
-                        style: GoogleFonts.montserrat(
-                          color: purple,
-                          fontWeight: FontWeight.w500,
-                          fontSize: 30,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          greeting,
+                          style: GoogleFonts.montserrat(
+                            color: purple,
+                            fontWeight: FontWeight.w500,
+                            fontSize: 30,
+                          ),
                         ),
-                      ),
-                      Text(
-                        available,
-                        style: GoogleFonts.montserrat(
-                          color: Colors.black,
-                          fontWeight: FontWeight.w500,
-                          fontSize: 20,
+                        SizedBox(height: size.height*0.02,),
+                        Text(
+                          available,
+                          style: GoogleFonts.montserrat(
+                            color: Colors.black,
+                            fontWeight: FontWeight.w500,
+                            fontSize: 20,
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -67,7 +73,7 @@ class LandingScreen extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => ScheduleScreen(),
+                    builder: (context) => ScheduleScreen2(),
                   ),
                 );
               },

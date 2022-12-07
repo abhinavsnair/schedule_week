@@ -3,10 +3,11 @@ import 'package:flutter/material.dart';
 class TimeContainer extends StatelessWidget {
   final String text;
   final Color color;
+  final Color textcolor;
   final void Function()? onTap;
 
   const TimeContainer(
-      {Key? key, required this.text, required this.color, required this.onTap})
+      {Key? key, required this.text, required this.color, required this.onTap,required this.textcolor})
       : super(key: key);
 
   @override
@@ -26,8 +27,8 @@ class TimeContainer extends StatelessWidget {
           child: Center(
             child: Text(
               text,
-              style: const TextStyle(
-                color: Colors.grey,
+              style:  TextStyle(
+                color: textcolor,
               ),
             ),
           ),
