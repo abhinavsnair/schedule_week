@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:schedule_week/constants/constants.dart';
+import 'landing_screen.dart';
 import 'utils/time_container.dart';
 
 class ScheduleScreen2 extends StatefulWidget {
@@ -66,7 +67,7 @@ class _ScheduleScreen2State extends State<ScheduleScreen2> {
                 'Set your weekly hours',
                 style: TextStyle(
                   fontWeight: FontWeight.w500,
-                  fontSize: 18,
+                  fontSize: 19,
                 ),
               ),
               sboxh15,
@@ -729,7 +730,7 @@ class _ScheduleScreen2State extends State<ScheduleScreen2> {
               sboxh10,
               // save button
               Padding(
-                padding: const EdgeInsets.only(left: 125, top: 15),
+                padding: const EdgeInsets.only(left: 140, top: 20),
                 child: SizedBox(
                   height: 40,
                   width: 100,
@@ -741,7 +742,12 @@ class _ScheduleScreen2State extends State<ScheduleScreen2> {
                       ),
                     ),
                     onPressed: () {
-                      // saveSchedule();
+                      Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const LandingScreen(),
+                  ),
+                );
                     },
                     child: const Text('Save'),
                   ),

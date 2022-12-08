@@ -85,7 +85,7 @@ class LandingScreen extends StatelessWidget {
                 child: Center(
                   child: Text(
                     'Edit Schedule',
-                    style: GoogleFonts.montserrat(
+                    style: GoogleFonts.montserrat(fontSize: 15,
                         color: white, fontWeight: FontWeight.w500),
                   ),
                 ),
