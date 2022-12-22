@@ -159,9 +159,11 @@ packages:
   parent_child_checkbox:
     dependency: "direct main"
     description:
-      name: parent_child_checkbox
-      url: "https://pub.dartlang.org"
-    source: hosted
+      path: "."
+      ref: HEAD
+      resolved-ref: "1d29fc7b7484d8449cdccc4c3cf73669f8429de1"
+      url: "https://github.com/webrror/parent-child-checkbox"
+    source: git
     version: "0.0.3"
   path:
     dependency: transitive
@@ -240,6 +242,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.2.4"
+  selectable_container:
+    dependency: transitive
+    description:
+      name: selectable_container
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.7"
   shared_preferences:
     dependency: "direct main"
     description:

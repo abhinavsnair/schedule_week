@@ -35,6 +35,8 @@ dependencies:
   google_fonts: ^3.0.1
   new_gradient_app_bar: ^0.2.0
   parent_child_checkbox: 
+    git:
+      url: https://github.com/webrror/parent-child-checkbox
   shared_preferences: ^2.0.15
 
 dev_dependencies:

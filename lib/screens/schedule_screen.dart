@@ -1,98 +1,90 @@
+import 'package:flutter/material.dart';
+import 'package:parent_child_checkbox/parent_child_checkbox.dart';
+import 'package:schedule_week/model/model.dart';
+import '../constants/constants.dart';
+import '../services/preferd_services.dart';
 
+class ScheduleScreen extends StatefulWidget {
+  const ScheduleScreen({super.key});
 
-// import 'package:flutter/material.dart';
-// import 'package:new_gradient_app_bar/new_gradient_app_bar.dart';
-// import 'package:parent_child_checkbox/parent_child_checkbox.dart';
-// import 'package:schedule_week/constants/constants.dart';
+  @override
+  State<ScheduleScreen> createState() => _ScheduleScreenState();
+}
 
-// class ScheduleScreen extends StatelessWidget {
-//   const ScheduleScreen({super.key});
+class _ScheduleScreenState extends State<ScheduleScreen> {
+  final _prefServices = PrefServices();
 
-//   @override
-//   Widget build(BuildContext context) {
-//     final size = MediaQuery.of(context).size;
-//     return Scaffold(
-//       // appBar: NewGradientAppBar(
-//       //   elevation: 2,
-//       //   title: Text('Set your weekly hours'),
-//       //   gradient: LinearGradient(
-//       //     colors: [purple, white],
-//       //   ),
-//       // ),
-//       body: SafeArea(
-//         child: Padding(
-//           padding: const EdgeInsets.all(8.0),
-//           child: SingleChildScrollView(
-//             child: Column(
-//               crossAxisAlignment: CrossAxisAlignment.start,
-//               children: [
-//                 const Text(
-//                   'Set your weekly hours',
-//                   style: TextStyle(
-//                     fontWeight: FontWeight.w500,
-//                   ),
-//                 ),
-//                 ListView.separated(
-//                   itemCount: days.length,
-//                   shrinkWrap: true,
-//                   physics: const NeverScrollableScrollPhysics(),
-//                   padding: const EdgeInsets.only(top: 20),
-//                   separatorBuilder: (context, index) {
-//                     return Divider(
-//                       thickness: 0.5,
-//                       color: Colors.deepPurple[100],
-//                     );
-//                   },
-//                   itemBuilder: (context, index) {
-//                     return ParentChildCheckbox(
-//                       parentCheckboxColor: Colors.green,
-//                       childrenCheckboxColor: Colors.deepPurple,
-//                       parent: Text(
-//                         days[index].toString(),
-//                         style: const TextStyle(
-//                           fontWeight: FontWeight.bold,
-//                         ),
-//                       ),
-//                       children: const [
-//                         Text(
-//                           'Morning',
-//                         ),
-//                         Text(
-//                           'Afternoon',
-//                         ),
-//                         Text(
-//                           'Evening',
-//                         ),
-//                       ],
-//                     );
-//                   },
-//                 ),
-//                 SizedBox(
-//                   height: size.height * 0.02,
-//                 ),
-//                 SizedBox(
-//                   height: size.height * 0.05,
-//                   width: size.width * 0.5,
-//                   child: ElevatedButton(
-//                     style: ElevatedButton.styleFrom(
-//                       backgroundColor: purple,
-//                       shape: RoundedRectangleBorder(
-//                         borderRadius: BorderRadius.circular(
-//                           10,
-//                         ),
-//                       ),
-//                     ),
-//                     onPressed: () {},
-//                     child: const Text(
-//                       'Save',
-//                     ),
-//                   ),
-//                 )
-//               ],
-//             ),
-//           ),
-//         ),
-//       ),
-//     );
-//   }
-// }
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Set your weekly hours'),
+        backgroundColor: const Color.fromARGB(255, 137, 17, 184),
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            // Display the Week
+            ListView.separated(
+              itemCount: weekDays.length,
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              padding: const EdgeInsets.only(top: 20),
+              separatorBuilder: (context, index) {
+                return Divider(
+                  thickness: 1,
+                  color: Colors.deepPurple[100],
+                );
+              },
+              itemBuilder: (context, index) {
+                return ParentChildCheckbox(
+                  parentCheckboxColor: Colors.green,
+                  childrenCheckboxColor:  const Color.fromARGB(255, 137, 17, 184),
+                  parent: Text(
+                    weekDays[index].toString(),
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  children: const [
+                    Text('Morning'),
+                    Text('Afternoon'),
+                    Text('Evening'),
+                  ],
+                );
+              },
+            ),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.05,
+            ),
+
+            SizedBox(
+                width: MediaQuery.of(context).size.width * 0.5,
+                height: MediaQuery.of(context).size.width * 0.12,
+                child: ElevatedButton(
+                  onPressed: () {
+                    saveSchedule();
+                  },
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color.fromARGB(255, 137, 17, 184),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(40))),
+                  child: const Text("Save"),
+                )),
+          ],
+        ),
+      ),
+    );
+  }
+
+  // Method called on pressing Save button
+  void saveSchedule() async {
+    final schedulePref =
+        WeeklySchedules(schedule: ParentChildCheckbox.selectedChildrens);
+
+    // if saving was success, return to landing page (also refresh landing page)
+    if (await _prefServices.saveSchedulePref(schedulePref)) {
+      Navigator.pop(context, true);
+    }
+  }
+}
